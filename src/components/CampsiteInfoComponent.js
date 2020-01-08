@@ -1,11 +1,8 @@
-import React, { Component } from 'react'; 
-import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 'reactstrap';
+import React from 'react'; 
+import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
 
-class CampsiteInfo extends React.Component{
-    //add a method named renderCampsite(), above the render() method
-    renderCampsite(campsite){
+function RenderCampsite ({campsite}) {
         return(
-            //add a jsx div element with the classes col-md-5 and m1
             <div class="col-md-5 m-1">
                     <Card>
                         <CardImg top src={campsite.image} alt={campsite.name}></CardImg>
@@ -18,7 +15,7 @@ class CampsiteInfo extends React.Component{
         )
     };
 
-    renderComments(comments) {
+    function RenderComments({comments}) {
         if (comments){
             return(
                 <div class="col-md-5 m-1">
@@ -37,20 +34,20 @@ class CampsiteInfo extends React.Component{
         return <div></div>;
     };
     
-    render() {
-        if (this.props.campsite) {
+    function CampsiteInfo(props) {
+        if (props.campsite) {
             return ( 
                 <div className="container">
                     <div className="row">
-                        {this.renderCampsite(this.props.campsite)}
-                        {this.renderComments(this.props.campsite.comments)}
+                        <RenderCampsite campsite={props.campsite} />
+                        <RenderComments comments={props.campsite.comments} />
                     </div>
                 </div>
             )
         } 
         return <div></div>;
     }
-}
+
 
 
 export default CampsiteInfo;
