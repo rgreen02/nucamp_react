@@ -1,5 +1,5 @@
-import {createStore} from 'redux';
-import {Reducer, initialState} from './reducer';
+import { createStore } from 'redux';
+import { Reducer, initialState } from './reducer';
 
 export const ConfigureStore = () => {
     const store = createStore (
@@ -7,4 +7,4 @@ export const ConfigureStore = () => {
         initialState
         );
         return store;
-    }
+    };
