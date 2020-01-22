@@ -1,5 +1,4 @@
-import { createStore } from 'redux';
-import { Reducer, initialState } from './reducer';
+import { createStore, combineReducers } from 'redux';
 import { Campsites } from './campsites';
 import { Comments } from './comments';
 import { Partners } from './partners';
