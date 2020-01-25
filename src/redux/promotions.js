@@ -1,7 +1,6 @@
 import * as ActionTypes from './ActionTypes';
 
-export const Promotions = (state = {
-                            isLoading: true,
+export const Promotions = (state = { isLoading: true,
                             errMess: null,
                             promotions: [] }, action) => {
         
@@ -11,7 +10,7 @@ export const Promotions = (state = {
         case ActionTypes.PROMOTIONS_LOADING:
             return {...state, isLoading: true, errMess: null, promotions: []}
         case ActionTypes.PROMOTIONS_FAILED:
-            return {...state, isLoading: false, errMess: null, promotions: action.payload};
+            return {...state, isLoading: false, errMess: action.payload};
         default:
           return state;
       }
